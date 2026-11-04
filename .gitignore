@@ -1,0 +1,7 @@
+/target
+/.venv
+/models/*
+!/models/REVISION
+/fixtures/*.safetensors
+.DS_Store
+__pycache__/

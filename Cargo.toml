@@ -1,0 +1,16 @@
+[package]
+name = "qwen-rs"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.104"
+memmap2 = "0.9.12"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+tokenizers = "0.23.2"
+
+[profile.dev]
+opt-level = 1   # at opt-level 0, simple matmuls over 0.5B params are painfully slow
+[profile.release]
+debug = true    # symbols for profiling (samply/Instruments), no runtime cost
